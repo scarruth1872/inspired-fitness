@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+:root {
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Matrix Theme Colors */
+  --matrix-green: #258d14;
+  --matrix-dark-green: #1a6b0e;
+  --matrix-black: #151515;
+  --matrix-text: #f8f8f8;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--matrix-green) var(--matrix-black);
+}
+
+/* Custom scrollbar for Webkit browsers */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--matrix-black);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--matrix-green);
+  border: 1px solid var(--matrix-dark-green);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--matrix-black);
+  color: var(--matrix-text);
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  margin: 0 auto;
+}
+
+::selection {
+  background: var(--matrix-dark-green);
+  color: var(--matrix-text);
+}
+
+/* Prevent text selection on glitch elements */
+.glitch {
+  user-select: none;
+}
+
+/* Add subtle pulse animation to text */
+.matrix-text {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Smooth transition for all interactive elements */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Typography scale */
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--matrix-green);
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Maintain focus outline for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--matrix-green);
+  outline-offset: 2px;
+}
